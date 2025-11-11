@@ -23,6 +23,18 @@ It's not just another template; it's a production-grade system engineered to eli
 
 ---
 
+## Table of Contents
+1.  [✅ The Solution: How It Solves Your Problems](#1-the-solution-how-it-solves-your-problems)
+2.  [📊 The Proof: See the Final Report](#2-the-proof-see-the-final-report-for-yourself)
+3.  [💡 The Potential: Your New Automation Launchpad](#3-the-potential-your-new-automation-launchpad)
+4.  [⚙️ The Engine Room: A Technical Deep Dive](#4-the-engine-room-a-technical-deep-dive)
+5.  [🚀 Setup & User Guide](#5-setup--user-guide)
+6.  [🔮 The Future: The Full SEVOsmith Vision](#6-the-future-the-full-sevosmith-vision)
+7.  [❤️ Support the Project](#️-support-the-project)
+8.  [📄 License](#-license)
+
+---
+
 ## 1. The Solution: How It Solves Your Problems
 
 Instead of just giving you data, the Orchestrator delivers a suite of solutions designed to give you back time, money, and strategic focus.
@@ -284,7 +296,7 @@ By getting the Keyword Orchestrator today, you are securing the foundational com
 This workflow is offered for free, but if you find it valuable, please consider supporting its ongoing development. Your support helps create more open-source templates and tools for the community.
 
 [![Get it on Gumroad](https://img.shields.io/badge/Support%20on-Gumroad-%23FF90E8?style=for-the-badge&logo=gumroad)](<YOUR_GUMROAD_LINK_HERE>)
-<a href="<YOUR_BUYMEACOFFEE_LINK_HERE>">
+<a href="https://buymeacoffee.com/nextgrowth">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
 </a>
 
