@@ -108,15 +108,6 @@ flowchart TD
         (Upload to S3, G-drive, Send Email)"];
         H --> I[✅ Update Status to 'Completed' & Finish];
     end
-
-    %% Styling
-    style A fill:#D5E8D4,stroke:#82B366
-    style I fill:#D5E8D4,stroke:#82B366
-    style C fill:#FFE6CC,stroke:#D79B00
-    style D_Check fill:#FFE6CC,stroke:#D79B00
-    style F_Start fill:#F8CECC,stroke:#B85450
-    style F_Notify fill:#F8CECC,stroke:#B85450
-    style F_End fill:#F8CECC,stroke:#B85450
 ```
 
 ## 🚀 How It Works: The Six Modules of Automation
