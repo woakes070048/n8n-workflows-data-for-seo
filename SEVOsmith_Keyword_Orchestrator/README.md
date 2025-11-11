@@ -58,58 +58,9 @@ Talk is cheap. The real proof is in the final product. Click on the live demos b
 
 <details>
 <summary><strong>► Click to expand the full architectural breakdown</strong></summary>
-```mermaid
-flowchart TD
-    subgraph mod1["Module 1: Initiation"]
-        A["▶️ Start: Trigger
-        (e.g., New Row in Google Sheet)"] --> B["⚙️ Get Seed Keyword & Settings"];
-    end
 
-    subgraph mod2["Module 2: Caching & Efficiency"]
-        B --> C{Cache Hit?};
-    end
+![SEVOsmith Keyword Orchestrator workflow chart](SEVOsmith_Keyword_Orchestrator_Flow_Chart.png)
 
-    %% --- Branching Logic from Module 2 ---
-    %% This is the Cache Hit Path, bypassing Modules 3 & 4
-    C -- Yes --> G; 
-    %% This is the Cache Miss Path, proceeding to Module 3
-    C -- No --> D;  
-
-    subgraph mod3["Module 3: Live Data Fetching"]
-        D["📡 Execute Parallel API Calls
-        (DataForSEO)"] --> D_Check{"API Calls Successful?"};
-    end
-    
-    subgraph mod6["Module 6: Failure Notification"]
-        D_Check -- No --> F_Start["❌ Log Error & Update Status to 'Error'"];
-        F_Start --> F_Notify["📧 Send Failure Notification Email"];
-        F_Notify --> F_End[🛑 Stop with Error];
-    end
-
-    subgraph mod4["Module 4: Synthesis (Success Path)"]
-        D_Check -- Yes --> E["🧠 Analyze & Structure Data
-        (Normalize & Compact)"];
-    end
-
-    subgraph mod5["Module 5: Output & Finalization (Success Path)"]
-        E --> J(➕ Create Cache Entry);
-        J --> G["📝 Generate Interactive Report
-        (HTML)"];
-        G --> H["📤 Deliver Report & Notify
-        (Upload to S3, Send Email)"];
-        H --> I[✅ Update Status to 'Completed' & Finish];
-    end
-
-    %% Styling
-    style A fill:#D5E8D4,stroke:#82B366
-    style I fill:#D5E8D4,stroke:#82B366
-    style C fill:#FFE6CC,stroke:#D79B00
-    style D_Check fill:#FFE6CC,stroke:#D79B00
-    style F_Start fill:#F8CECC,stroke:#B85450
-    style F_Notify fill:#F8CECC,stroke:#B85450
-    style F_End fill:#F8CECC,stroke:#B85450
-```
-    
 1.  **Job Initiation & State Management:** A robust, stateful job queue using Google Sheets ensures every research task is processed reliably (`To_Do` -> `Processing` -> `Completed`).
 
 2.  **Intelligent Caching & Cost Control:** A unique `cache_key` is generated for each job. The workflow queries an internal n8n Data Table first, bypassing all API calls on a cache hit.
