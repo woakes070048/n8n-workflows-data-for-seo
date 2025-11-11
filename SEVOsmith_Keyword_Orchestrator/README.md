@@ -19,6 +19,9 @@ The **SEVOsmith Keyword Orchestrator** is the delivery on the promise of true au
 ![SEVOsmith Keyword Orchestrator n8n Workflow](SEVOsmith-Keyword-Orchestrator-workflkow-screenshot.jpg)
 > *A high-level view of the SEVOsmith Keyword Orchestrator workflow in n8n.*
 
+![SEVOsmith Google Sheet Manager Screenshot](SEVOsmith-Keyword-Orchestrator-Manager-Google-Sheet.jpg)
+> *Screenshot of the Google sheet manager*
+
 ## 🤖 Key Features
 
 This system is designed to turn the raw, disconnected data from **DataForSEO** into a cohesive, actionable intelligence report.
