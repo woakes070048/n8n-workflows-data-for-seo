@@ -107,7 +107,7 @@ graph TD;
     style D_Check fill:#FFE6CC,stroke:#D79B00
     style F_Start fill:#F8CECC,stroke:#B85450
     style F_Notify fill:#F8CECC,stroke:#B85450
-    style F_End fill:#F8CECC,stroke:#B85450```
+    style F_End fill:#F8CECC,stroke:#B85450``````
     
 1.  **Job Initiation & State Management:** A robust, stateful job queue using Google Sheets ensures every research task is processed reliably (`To_Do` -> `Processing` -> `Completed`).
 
