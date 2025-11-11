@@ -688,7 +688,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        6016,
+        5936,
         192
       ],
       "id": "97cc5341-2059-4009-994d-6cf6daa757a6",
@@ -701,7 +701,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        6512,
+        6320,
         192
       ],
       "id": "211fb8cc-265b-41ff-b208-de9e348c3f94",
@@ -1140,7 +1140,7 @@
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
       "position": [
-        7104,
+        7552,
         192
       ],
       "id": "e56be28b-b37a-4ca7-9237-c7441ac9fb47",
@@ -1155,7 +1155,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        6720,
+        6752,
         192
       ],
       "id": "3b804905-c104-4e1c-9e26-968a64776bf2",
@@ -1397,7 +1397,7 @@
       "typeVersion": 2,
       "position": [
         8656,
-        -432
+        -448
       ],
       "id": "93945e99-05c9-4fa0-a1a8-f34038c1714d",
       "name": "Keyword Research Report Synthesizer"
@@ -1410,7 +1410,7 @@
       "typeVersion": 2,
       "position": [
         4752,
-        -432
+        -448
       ],
       "id": "66df284f-54f6-4497-9030-ef5ff2921313",
       "name": "Get data from Cache"
@@ -1422,7 +1422,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        6912,
+        7200,
         192
       ],
       "id": "a1756dcc-d61f-495e-9c80-464745a4fcbe",
@@ -1634,7 +1634,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        9376,
+        9344,
         -624
       ],
       "id": "5da635f4-488f-4906-95ea-9153b66e7021",
@@ -1668,7 +1668,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        9376,
+        9344,
         -256
       ],
       "id": "ff876a0a-0afc-48dc-b2cf-4c20c83e0eef",
@@ -2115,7 +2115,8 @@
           "value": {
             "Keyword": "={{ $('Set Input Data').item.json.keyword }}",
             "Raw Data": "=https://docs.google.com/spreadsheets/d/{{ $('Google Drive Copy KW Template').item.json.id }}/view?usp=sharing",
-            "Session ID": "={{ $('Set Input Data').item.json.session_id }}"
+            "Session ID": "={{ $('Set Input Data').item.json.session_id }}",
+            "Execution ID": "={{ $('Set Input Data').item.json.workflow_execution_id }}"
           },
           "matchingColumns": [
             "Session ID"
@@ -2134,6 +2135,16 @@
             {
               "id": "Session ID",
               "displayName": "Session ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Execution ID",
+              "displayName": "Execution ID",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -2182,8 +2193,38 @@
               "removed": true
             },
             {
+              "id": "Report in G-drive",
+              "displayName": "Report in G-drive",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Report in Cloudflade R2",
+              "displayName": "Report in Cloudflade R2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Raw Data",
               "displayName": "Raw Data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -2246,7 +2287,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        6272,
+        6128,
         192
       ],
       "id": "dfc235c9-751e-4667-ab45-40152fc9e863",
@@ -2539,8 +2580,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        8432,
-        -432
+        6752,
+        -448
       ],
       "id": "e046239d-d584-49cb-8145-37dc2dbdbfa8",
       "name": "Merge Data Sources"
@@ -3412,17 +3453,6 @@
       "name": "Transfer Input Data"
     },
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.2,
-      "position": [
-        7904,
-        208
-      ],
-      "id": "c34366ae-f54a-4e0b-8456-1b30ae9ddbdf",
-      "name": "Wait"
-    },
-    {
       "parameters": {
         "operation": "copy",
         "fileId": {
@@ -3448,7 +3478,7 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        6944,
+        6960,
         464
       ],
       "id": "07612dc0-b471-4d07-800f-ae79a18263e8",
@@ -3468,7 +3498,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        6944,
+        6960,
         688
       ],
       "id": "4e15167f-2a5b-42a2-8da8-16156cb26361",
@@ -3502,7 +3532,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        6720,
+        6752,
         480
       ],
       "id": "11d66077-eb10-474f-a11d-e4407909c344",
@@ -3525,7 +3555,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        7152,
+        7216,
         464
       ],
       "id": "2cf7d1c6-fef5-4cce-b035-5bcf5f8fe2e7",
@@ -3596,17 +3626,6 @@
     },
     {
       "parameters": {},
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.2,
-      "position": [
-        8240,
-        -208
-      ],
-      "id": "ea678fec-53b6-47ed-a17f-c5ebd84bba00",
-      "name": "Merge1"
-    },
-    {
-      "parameters": {},
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
@@ -3639,7 +3658,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        9360,
+        10016,
         192
       ],
       "id": "dc933c54-39ba-4403-beec-a70b8380fce6",
@@ -3649,7 +3668,7 @@
       "parameters": {
         "content": "## Normalize Raw Data",
         "height": 320,
-        "width": 784
+        "width": 816
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -3693,20 +3712,9 @@
       "name": "Sticky Note15"
     },
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        6736,
-        -224
-      ],
-      "id": "470d9f85-6cd2-46fb-8945-765998317beb",
-      "name": "Transfer Data to Synthesizer"
-    },
-    {
       "parameters": {
         "content": "## Keyword Report Synthesizer",
-        "height": 640,
+        "height": 656,
         "width": 2112,
         "color": 5
       },
@@ -3798,9 +3806,306 @@
         928
       ],
       "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        9360,
+        176
+      ],
+      "id": "c34366ae-f54a-4e0b-8456-1b30ae9ddbdf",
+      "name": "Wait for All Processes"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        6528,
+        192
+      ],
+      "id": "470d9f85-6cd2-46fb-8945-765998317beb",
+      "name": "Normalized Data Hub"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "SEVOsmith_Trigger": [
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "25110903159ba9",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "n8n",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/12a8gL7Qn3z5LDyrF1GKDu33WNNi8jNLs/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/n8n__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1QdpfCH7LZt8a7u3AjbCoUmGHpTjejpP0pvGQFNIK_XE/view?usp=sharing",
+          "Notes": ""
+        }
+      },
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "2511090338acb5",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "n8n monitoring",
+          "Action": "Submit",
+          "Status": "Error",
+          "Report in G-drive": "",
+          "Report in Cloudflade R2": "",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1A3cbZOtWiH1pxpLJ07Ll_bDOdcxxb1AWkvF27Kx4p0Q/view?usp=sharing",
+          "Notes": "[serp]: Invalid Field: 'language_code'."
+        }
+      },
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "2511090521d73b",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "n8n self hosted",
+          "Action": "Submit",
+          "Status": "Error",
+          "Report in G-drive": "",
+          "Report in Cloudflade R2": "",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1ejfJSFkj3scHDskcv9S3Zd-yGYzekrNgLU51op3q2wo/view?usp=sharing",
+          "Notes": "[serp]: Invalid Field: 'language_code'."
+        }
+      },
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "2511100010a2c9",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "n8n keyword research",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1paNGJrxT0dNeHw_9E3m5H1M1MrfJG32U/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/n8n-keyword-research__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1ABAxO8BZIBKC67I8vWiwe9jIrzU4V0TCvShkSISJpS0/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "2511090611cdfb",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "ai seo content generator",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/14fA6dO904rKAO3ZEBCEtm6e35zEGvBG8/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/ai-seo-content-generator__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1MTzkn0KrkzKZd-sFbaMiOJMsdBzOQHbjrKTFRKfpOHc/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "New Project",
+          "Session ID": "2511090553f4a7",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "máy nén khí trục vít",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1rItC5k6LuZclmL6vzIXxkY-Zq4KvlCuJ/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/máy-nén-khí-trục-vít__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1XICybBTuPEptvOZItoOlUgO2nvvFud3AIgTXr9viKTg/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "2511090950689a",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "Golden Retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1PS0bjk__EI83rIBHhjmTAtIz9Dx1tZsl/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/golden-retriever__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1TZhLkRGcX2qbQpbBDN5GofZCad-FwnqTA7KAGQpGHGg/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "2511091018e05d",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "1 year old Golden Retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1gm6yEksXe_LScphijJFDMCijyMh0dbFe/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/1-year-old-golden-retriever__keyword_research.html",
+          "Raw Data": "",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "2511091018a8a3",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "2 year old Golden Retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/12qnfbhcARyRoeeaQPmyO94s-TEKWPAY0/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/2-year-old-golden-retriever__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/19Jw-6S5i2Sk-tlEkIP04BzSDQxKI9qDbsAH1UOjQDv8/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "25110915109abb",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "8 week old golden retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/12geFexBm_W2DhuQhgegSjuxATTW2JdgZ/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/8-week-old-golden-retriever__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1lcyR0_hkEYK0SKcB2N60yu1WWHO6S-VgXZx-2Qlw41k/view?usp=sharing",
+          "Notes": ""
+        }
+      },
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "2511091515ed6a",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "n8n keyword research",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1z5zGBPJfJ1R-a1qoXKpyALIegq1Y1CWK/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/n8n-keyword-research__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1JNQ8Y3WiNBOrQKDlWfeswhTTmbvyHr_wxdRPkWp7pmg/view?usp=sharing",
+          "Notes": ""
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "2511100256c6e0",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "12 week old golden retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1p81ERYPm1Yy4aJf3nGv51WIeCk5nwc5a/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/12-week-old-golden-retriever__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/10q-iBEoF9QtlFne-5Rk9LSxpanMGTzdfjJlnohwcpZU/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "25111003157be3",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "6 month old golden retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1ph4PGaYi7mCxXx7e6ZEuLQoC-x5y_WDM/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/6-month-old-golden-retriever__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1DIahGe7ycHrgWmdgCkk8535FpsT_g1JlptTWU-f1LVQ/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "2511100913df3a",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "6 week old golden retriever",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1MQJp3_FGJ5emMcwhHtRt9IVJBtUyfiHq/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/6-week-old-golden-retriever__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1hp0QKDEq8FyJ5Wa5lxtJpPQ59IS9DLnAyAd4bGpEtDs/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": 25111011533162,
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "puppy potty crate training",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1GA4Gu2nynXFvkRiz0T1MfZp8Y1S6pCCB/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/puppy-potty-crate-training__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1M5g2SDG3pjxSsHb9KZnFVmJEzpc76Y4dPvSMJkz0PQs/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Devoted",
+          "Session ID": "",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "puppy chew toys",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1U-kOlvKu6brCfsZG0OhtvDM0sBXgd8R4/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/puppy-chew-toys__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/1RsfTWBkTSzxenryCaHVVTjFwk6X8j73Tq5Y9TFzCH7Y/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "New Project",
+          "Session ID": 25111100272038,
+          "Execution ID": 3488,
+          "Date": "",
+          "Keyword": "best seo tools for agencies",
+          "Action": "Submit",
+          "Status": "Completed",
+          "Report in G-drive": "https://drive.google.com/file/d/1IsDOujOnHaZ52Myh7zxKaHab_A_jZisa/view?usp=sharing",
+          "Report in Cloudflade R2": "https://pub-888f481be9bf4ba69f23d2e208e4a20b.r2.dev/article/best-seo-tools-for-agencies__keyword_research.html",
+          "Raw Data": "https://docs.google.com/spreadsheets/d/14lJAQb_56N5yzV0GtwWd_gi7JbYNdO2SZW8i2Qhq5bQ/view?usp=sharing",
+          "Notes": "Successful"
+        }
+      },
+      {
+        "json": {
+          "Project": "Nextgrowth",
+          "Session ID": "",
+          "Execution ID": "",
+          "Date": "",
+          "Keyword": "n8n self hosted",
+          "Action": "Submit",
+          "Status": "To_Do",
+          "Report in G-drive": "",
+          "Report in Cloudflade R2": "",
+          "Raw Data": "",
+          "Notes": ""
+        }
+      }
+    ]
+  },
   "connections": {
     "Search Intent": {
       "main": [
@@ -4026,17 +4331,7 @@
       "main": [
         [
           {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Save Raw Data?",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Transfer Data to Synthesizer",
+            "node": "Normalized Data Hub",
             "type": "main",
             "index": 0
           }
@@ -4125,9 +4420,9 @@
       "main": [
         [
           {
-            "node": "Wait",
+            "node": "Wait for All Processes",
             "type": "main",
-            "index": 0
+            "index": 1
           }
         ]
       ]
@@ -4263,7 +4558,7 @@
             "index": 0
           },
           {
-            "node": "Isolate Final Payload",
+            "node": "Wait for All Processes",
             "type": "main",
             "index": 0
           }
@@ -4724,17 +5019,6 @@
         ]
       ]
     },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
     "Split Out KW and Metrics": {
       "main": [
         [
@@ -4835,24 +5119,13 @@
         ]
       ]
     },
-    "Merge1": {
-      "main": [
-        [
-          {
-            "node": "Merge Data Sources",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Raw Data Path Complete": {
       "main": [
         [
           {
-            "node": "Wait",
+            "node": "Wait for All Processes",
             "type": "main",
-            "index": 1
+            "index": 2
           }
         ]
       ]
@@ -4879,11 +5152,32 @@
         ]
       ]
     },
-    "Transfer Data to Synthesizer": {
+    "Wait for All Processes": {
       "main": [
         [
           {
-            "node": "Merge1",
+            "node": "Isolate Final Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalized Data Hub": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save Raw Data?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge Data Sources",
             "type": "main",
             "index": 0
           }
@@ -4896,9 +5190,10 @@
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": false,
-    "errorWorkflow": "oxfDvlgwQE8SXHM4"
+    "errorWorkflow": "oxfDvlgwQE8SXHM4",
+    "saveExecutionProgress": true
   },
-  "versionId": "f0a75019-80a3-4dd5-a8af-3e0684c41eae",
+  "versionId": "7a60dea2-9207-46a6-b84a-eeda71ca28b1",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "11e9efcdcf8b81c33a6dc0fbb8a65585e44890419633abdd99da8b32fbffb48e"
