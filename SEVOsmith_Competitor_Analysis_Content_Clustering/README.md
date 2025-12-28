@@ -5,6 +5,7 @@
 This workflow is the intelligence core of the SEVOsmith suite. It automates the end-to-end process of **Competitor Analysis**—identifying market leaders and dissecting their traffic sources—to generate a cohesive **Pillar and Cluster Content Strategy**. By transforming raw SERP data into a structured roadmap, it allows agencies to move from "Research" to "Execution" in minutes.
 
 ---
+![SEVOsmith Keyword Orchestrator n8n Workflow](Competitor-Analysis-Content-Clustering-with-n8n-and-DataForSEO.jpg)
 
 <br>
 
